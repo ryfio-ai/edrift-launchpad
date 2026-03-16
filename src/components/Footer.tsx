@@ -1,20 +1,23 @@
 import { Mail, Phone, MapPin, Linkedin, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/edrift-logo.png";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="bg-secondary text-secondary-foreground">
+    <footer className="bg-secondary text-secondary-foreground">
       {/* CTA strip */}
       <div className="border-b border-secondary-foreground/10">
         <div className="container mx-auto px-4 lg:px-8 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="font-display text-xl md:text-2xl font-bold">Ready to power your EV platform?</h3>
-            <p className="text-secondary-foreground/50 text-sm mt-1">Talk to our engineering team about your requirements.</p>
+            <p className="text-secondary-foreground/50 text-sm mt-1">Get in touch with our team to discuss your requirements.</p>
           </div>
-          <Button variant="cta" size="lg" className="shrink-0 group">
-            Contact Sales
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <Button variant="cta" size="lg" className="shrink-0 group" asChild>
+            <Link to="/contact">
+              Get Quote
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </Button>
         </div>
       </div>
@@ -55,10 +58,10 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4 text-secondary-foreground/80">Quick Links</h4>
             <div className="space-y-2.5 text-sm text-secondary-foreground/60">
-              <p className="hover:text-primary transition-colors cursor-pointer">Home</p>
-              <p className="hover:text-primary transition-colors cursor-pointer">Products</p>
-              <p className="hover:text-primary transition-colors cursor-pointer">Engineering Portal</p>
-              <p className="hover:text-primary transition-colors cursor-pointer font-medium text-primary">Contact Sales →</p>
+              <Link to="/" className="block hover:text-primary transition-colors">Home</Link>
+              <Link to="/products" className="block hover:text-primary transition-colors">Products</Link>
+              <Link to="/about" className="block hover:text-primary transition-colors">About Us</Link>
+              <Link to="/contact" className="block hover:text-primary transition-colors font-medium text-primary">Contact Us →</Link>
             </div>
           </div>
 
@@ -66,11 +69,9 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold mb-4 text-secondary-foreground/80">Connect</h4>
             <div className="space-y-2.5 text-sm text-secondary-foreground/60">
-              <a href="#" className="flex items-center gap-2 hover:text-primary transition-colors font-medium">
+              <a href="https://www.linkedin.com/in/sankar-edriftelectric" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors font-medium">
                 <Linkedin className="w-4 h-4" /> LinkedIn
               </a>
-              <p className="hover:text-primary transition-colors cursor-pointer">Twitter</p>
-              <p className="hover:text-primary transition-colors cursor-pointer">YouTube</p>
             </div>
           </div>
         </div>
@@ -78,7 +79,7 @@ const Footer = () => {
 
       <div className="border-t border-secondary-foreground/8">
         <div className="container mx-auto px-4 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-secondary-foreground/40">
-          <p>© 2026 eDrift Electric. All rights reserved.</p>
+          <p>© 2026 eDrift Electric Private Limited. All rights reserved.</p>
           <div className="flex gap-6">
             <span className="hover:text-secondary-foreground cursor-pointer transition-colors">Privacy Policy</span>
             <span className="hover:text-secondary-foreground cursor-pointer transition-colors">Terms & Conditions</span>
